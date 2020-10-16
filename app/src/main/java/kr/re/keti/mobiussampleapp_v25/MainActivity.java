@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     private static CSEBase csebase = new CSEBase();
     private static AE ae = new AE();
     private static String TAG = "MainActivity";
-    private String MQTTPort = "1883";
-    private String ServiceAEName = "ae-edu1";
+    private String MQTTPort = "18830";
+    private String ServiceAEName = "wisoft";
     private String MQTT_Req_Topic = "";
     private String MQTT_Resp_Topic = "";
     private MqttAndroidClient mqttClient = null;
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
         Mobius_Address = EditText_Address.getText().toString();
 
-        csebase.setInfo(Mobius_Address,"7579","Mobius","1883");
+        csebase.setInfo(Mobius_Address,"7579","Mobius","18830");
 
         //csebase.setInfo("203.253.128.151","7579","Mobius","1883");
         // AE Create for Android AE
@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     });
                     req.start();
                 } else {
-                    ControlRequest req = new ControlRequest("2");
+                    ControlRequest req = new ControlRequest("0");
                     req.setReceiver(new IReceived() {
                         public void getResponseBody(final String msg) {
                             handler.post(new Runnable() {
@@ -422,9 +422,14 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 conn.setInstanceFollowRedirects(false);
 
                 conn.setRequestProperty("Accept", "application/xml");
+//                conn.setRequestProperty("Accept", "application/json");
                 conn.setRequestProperty("Content-Type", "application/vnd.onem2m-res+xml;ty=4");
+//                conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
                 conn.setRequestProperty("locale", "ko");
+//                conn.setRequestProperty("locale", "ko");
                 conn.setRequestProperty("X-M2M-RI", "12345");
+//                conn.setRequestProperty("X-M2M-RI", "12345");
+//                conn.setRequestProperty("X-M2M-Origin", ae.getAEid() );
                 conn.setRequestProperty("X-M2M-Origin", ae.getAEid() );
 
                 String reqContent = contentinstance.makeXML();

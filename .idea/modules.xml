@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MobiusSampleAppv25.iml" filepath="$PROJECT_DIR$/MobiusSampleAppv25.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/oneM2M-Application-AndroidSample.iml" filepath="$PROJECT_DIR$/.idea/modules/oneM2M-Application-AndroidSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/oneM2M-Application-AndroidSample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/oneM2M-Application-AndroidSample.app.iml" />
     </modules>
   </component>
 </project>
